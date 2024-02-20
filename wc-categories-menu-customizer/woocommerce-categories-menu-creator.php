@@ -6,7 +6,7 @@
  * Version: 1.0
  * Author: BuyReadySite.com
  * Author URI: https://buyreadysite.com/about-us
- * Text Domain: woocommerce-categories-menu-creator
+ * Text Domain: wc-categories-menu-customizer
  * Domain Path: /languages/
  * Requires at least: 5.5
  * Tested up to: 6.4.3
@@ -14,6 +14,7 @@
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  */
+
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit; // Exit if accessed directly.
@@ -39,10 +40,11 @@ function brs_check_woocommerce_active() {
 function brs_woocommerce_not_active_notice() {
     ?>
     <div class="notice notice-warning is-dismissible">
-        <p><?php _e( 'WooCommerce Categories Menu Creator requires WooCommerce to be installed and active.', 'woocommerce-categories-menu-creator' ); ?></p>
+        <p><?php _e( 'WC Categories Menu Customizer requires WooCommerce to be installed and active.', 'wc-categories-menu-customizer' ); ?></p>
     </div>
     <?php
 }
+
 
 if ( brs_check_woocommerce_active() ) {
     include_once plugin_dir_path( __FILE__ ) . 'admin/menu-page.php';
@@ -54,8 +56,8 @@ add_action('admin_menu', 'brs_woocommerce_categories_menu_creator_menu');
 
 function brs_woocommerce_categories_menu_creator_menu() {
     add_menu_page(
-        __('WooCommerce Categories Menu', 'woocommerce-categories-menu-creator'), // Page title
-        __('WC Categories Menu', 'woocommerce-categories-menu-creator'), // Menu title
+        __('WooCommerce Categories Menu', 'wc-categories-menu-customizer'), // Page title
+        __('WC Categories Menu', 'wc-categories-menu-customizer'), // Menu title
         'manage_options', // Capability
         'woocommerce-categories-menu-creator', // Menu slug
         'brs_woocommerce_categories_menu_creator_page', // Функция должна совпадать с объявленной
@@ -64,6 +66,7 @@ function brs_woocommerce_categories_menu_creator_menu() {
 }
 
 
+
 function brs_load_textdomain() {
-    load_plugin_textdomain('woocommerce-categories-menu-creator', false, basename(dirname(__FILE__)) . '/languages/');
+    load_plugin_textdomain('wc-categories-menu-customizer', false, basename(dirname(__FILE__)) . '/languages/');
 }
