@@ -10,7 +10,7 @@ if (isset($_POST['brs_menu_name'])) {
 function brs_admin_notice_success() {
     ?>
     <div class="notice notice-success is-dismissible">
-        <p><?php _e('Меню успешно создано/обновлено!', 'woocommerce-categories-menu-creator'); ?></p>
+        <p><?php _e('Меню успешно создано/обновлено!', 'wc-categories-menu-customizer'); ?></p>
     </div>
     <?php
 }
@@ -92,11 +92,11 @@ function brs_woocommerce_categories_menu_creator_page() {
         <form method="post">
             <table class="form-table">
                 <tr valign="top">
-                <th scope="row"><?php _e('Название меню:', 'woocommerce-categories-menu-creator'); ?></th>
+                <th scope="row"><?php _e('Название меню:', 'wc-categories-menu-customizer'); ?></th>
                 <td><input type="text" name="brs_menu_name" value="woocommerce_categories_menu" /></td>
                 </tr>
             </table>
-            <?php submit_button(__('Создать/Обновить меню', 'woocommerce-categories-menu-creator')); ?>
+            <?php submit_button(__('Создать/Обновить меню', 'wc-categories-menu-customizer')); ?>
         </form>
     </div>
     <?php
